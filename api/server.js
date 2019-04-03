@@ -12,7 +12,7 @@ server.use('/api/auth', authRouter);
 server.use('/api/users', usersRouter);
 
 server.get('/', (req, res) => {
-  res.send("The server for web-Auth-iv-guided! ...It's alive!");
+  res.send("The server for the web-auth-iv-guided project! ...It's alive!");
 });
 
 module.exports = server;
