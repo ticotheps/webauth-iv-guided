@@ -12,7 +12,7 @@ const checkRole = require('../auth/check-role-middleware.js');
 //     .catch(err => res.send(err));
 // });
 
-router.get('/', (req, res) => {
+router.get('/', restricted, (req, res) => {
   Users.find()
     .then(users => {
       res.json({ users, decodedToken: req.decodedJwt });
@@ -28,7 +28,7 @@ router.get('/', (req, res) => {
 //     .catch(err => res.send(err));
 // });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', restricted, (req, res) => {
   Users.findById(req.params.id)
     .then(user => {
       res.json({ users, decodedToken: req.decodedJwt });
